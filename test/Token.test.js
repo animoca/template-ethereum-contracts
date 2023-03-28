@@ -20,8 +20,6 @@ const config = {
     symbol,
     decimals,
     forwarderRegistry: getForwarderRegistryAddress,
-    initialAdmin: getDeployerAddress,
-    initialOwner: getDeployerAddress,
   },
 };
 
