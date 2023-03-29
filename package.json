@@ -1,6 +1,6 @@
 {
   "name": "@animoca/template-ethereum-contracts",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "description",
   "author": "author",
   "license": "MIT",
@@ -47,7 +47,7 @@
     "@openzeppelin/contracts": "=4.8.2",
     "chai": "^4.3.7",
     "cross-env": "^7.0.3",
-    "eslint": "^8.36.0",
+    "eslint": "^8.37.0",
     "eslint-config-mocha": "^0.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-mocha": "^10.1.0",
