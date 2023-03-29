@@ -110,11 +110,17 @@ runBehaviorTests('MintableToken', config, function (deployFn) {
     },
   };
 
-  let deployer;
-
-  before(async function () {
-    [deployer] = await ethers.getSigners();
-  });
+  // let deployer;
+  //
+  // before(async function () {
+  //   [deployer] = await ethers.getSigners();
+  // });
+  //
+  // describe('Custom tests', function () {
+  //   it('should...', async function () {
+  //     // ...
+  //   });
+  // });
 
   behavesLikeERC20(implementation);
 });

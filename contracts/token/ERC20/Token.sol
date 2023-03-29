@@ -2,6 +2,7 @@
 pragma solidity 0.8.17;
 
 import {IForwarderRegistry} from "@animoca/ethereum-contracts/contracts/metatx/interfaces/IForwarderRegistry.sol";
+import {ERC20Storage} from "@animoca/ethereum-contracts/contracts/token/ERC20/libraries/ERC20Storage.sol";
 import {ERC20} from "@animoca/ethereum-contracts/contracts/token/ERC20/ERC20.sol";
 import {ERC20Detailed} from "@animoca/ethereum-contracts/contracts/token/ERC20/ERC20Detailed.sol";
 import {ERC20Metadata} from "@animoca/ethereum-contracts/contracts/token/ERC20/ERC20Metadata.sol";
@@ -15,12 +16,18 @@ import {ForwarderRegistryContextBase} from "@animoca/ethereum-contracts/contract
 import {ForwarderRegistryContext} from "@animoca/ethereum-contracts/contracts/metatx/ForwarderRegistryContext.sol";
 
 contract Token is ERC20, ERC20Detailed, ERC20Metadata, ERC20Permit, ERC20SafeTransfers, ERC20BatchTransfers, TokenRecovery, ForwarderRegistryContext {
+    using ERC20Storage for ERC20Storage.Layout;
+
     constructor(
         string memory tokenName,
         string memory tokenSymbol,
         uint8 tokenDecimals,
+        address[] memory holders,
+        uint256[] memory allocations,
         IForwarderRegistry forwarderRegistry
-    ) ERC20Detailed(tokenName, tokenSymbol, tokenDecimals) ForwarderRegistryContext(forwarderRegistry) ContractOwnership(msg.sender) {}
+    ) ERC20Detailed(tokenName, tokenSymbol, tokenDecimals) ForwarderRegistryContext(forwarderRegistry) ContractOwnership(msg.sender) {
+        ERC20Storage.layout().batchMint(holders, allocations);
+    }
 
     /// @inheritdoc ForwarderRegistryContextBase
     function _msgSender() internal view virtual override(Context, ForwarderRegistryContextBase) returns (address) {

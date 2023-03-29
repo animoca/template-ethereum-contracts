@@ -1,6 +1,5 @@
 const {ethers} = require('hardhat');
 const {runBehaviorTests} = require('@animoca/ethereum-contract-helpers/src/test/run');
-const {getDeployerAddress} = require('@animoca/ethereum-contract-helpers/src/test/accounts');
 const {getForwarderRegistryAddress} = require('@animoca/ethereum-contracts/test/helpers/registries');
 const {behavesLikeERC20} = require('@animoca/ethereum-contracts/test/contracts/token/ERC20/behaviors/ERC20.behavior');
 
@@ -12,13 +11,15 @@ const tokenURI = '';
 const config = {
   immutable: {
     name: 'TokenMock',
-    ctorArguments: ['name', 'symbol', 'decimals', 'forwarderRegistry'],
+    ctorArguments: ['name', 'symbol', 'decimals', 'holders', 'allocations', 'forwarderRegistry'],
     testMsgData: true,
   },
   defaultArguments: {
     name,
     symbol,
     decimals,
+    holders: [],
+    allocations: [],
     forwarderRegistry: getForwarderRegistryAddress,
   },
 };
@@ -68,18 +69,25 @@ runBehaviorTests('Token', config, function (deployFn) {
     },
     methods: {},
     deploy: async function (initialHolders, initialBalances, deployer) {
-      const contract = await deployFn();
-      await contract.grantRole(await contract.MINTER_ROLE(), deployer.address);
-      await contract.batchMint(initialHolders, initialBalances);
+      const contract = await deployFn({
+        holders: initialHolders,
+        allocations: initialBalances,
+      });
       return contract;
     },
   };
 
-  let deployer;
-
-  before(async function () {
-    [deployer] = await ethers.getSigners();
-  });
+  // let deployer;
+  //
+  // before(async function () {
+  //   [deployer] = await ethers.getSigners();
+  // });
+  //
+  // describe('Custom tests', function () {
+  //   it('should...', async function () {
+  //     // ...
+  //   });
+  // });
 
   behavesLikeERC20(implementation);
 });
