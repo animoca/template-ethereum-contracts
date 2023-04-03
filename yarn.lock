@@ -5,17 +5,17 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@animoca/ethereum-contract-helpers@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "@animoca/ethereum-contract-helpers@npm:0.0.2"
-  checksum: 209dda59c9902848733d9e73ac1cf8e99c2c49d5233760297692acd736959019169a8042b948c8a23688e49abc939cc17b28d97a22d7b2cdef6554562f74c5a2
+"@animoca/ethereum-contract-helpers@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@animoca/ethereum-contract-helpers@npm:0.0.4"
+  checksum: 92e2c5dbec0129899f013d524b49488928cd14a18e78c7738d807ac5ca4f09038a9dd24b89ae949b527973f8cf86e6bf24a34b8c8954a2bb39d8b625ae98b98f
   languageName: node
   linkType: hard
 
-"@animoca/ethereum-contracts@npm:=1.1.0":
-  version: 1.1.0
-  resolution: "@animoca/ethereum-contracts@npm:1.1.0"
-  checksum: d393d297ebb4d48597b7b5df248a9a6aa275d5d5ae8c51bf7b28ef4cee8205187e51b67445c5f716db96c2984cb3e9a30e5b427157fff4cbe110171b4691f3e9
+"@animoca/ethereum-contracts@npm:=1.1.1":
+  version: 1.1.1
+  resolution: "@animoca/ethereum-contracts@npm:1.1.1"
+  checksum: 17594a1781dede0cbc81f8e8262c3a0bed696f37f624e3ef7ed408f9e844f205d80232e9ec68aeedc98c68c39881e27613ee193bfc43a8d2cfeb08ca48434d8c
   languageName: node
   linkType: hard
 
@@ -23,8 +23,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@animoca/template-ethereum-contracts@workspace:."
   dependencies:
-    "@animoca/ethereum-contract-helpers": ^0.0.2
-    "@animoca/ethereum-contracts": =1.1.0
+    "@animoca/ethereum-contract-helpers": ^0.0.4
+    "@animoca/ethereum-contracts": =1.1.1
     "@nomicfoundation/hardhat-chai-matchers": ^1.0.6
     "@nomicfoundation/hardhat-network-helpers": ^1.0.8
     "@nomiclabs/hardhat-ethers": ^2.2.2
@@ -38,7 +38,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     ethers: ^5.7.2
     fs-extra: ^11.1.1
-    glob: ^9.3.2
+    glob: ^9.3.4
     hardhat: ^2.13.0
     hardhat-deploy: ^0.11.25
     hardhat-deploy-ethers: ^0.3.0-beta.13
@@ -3636,15 +3636,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^9.3.2":
-  version: 9.3.2
-  resolution: "glob@npm:9.3.2"
+"glob@npm:^9.3.4":
+  version: 9.3.4
+  resolution: "glob@npm:9.3.4"
   dependencies:
     fs.realpath: ^1.0.0
-    minimatch: ^7.4.1
+    minimatch: ^8.0.2
     minipass: ^4.2.4
     path-scurry: ^1.6.1
-  checksum: f3d188e9f70e24fa729a63ca197bcdb36d838677abec1fb9bbfe4b7620063bf90dc0f8d195203d632abfdfa049fad0edf22f93c60076de67cef20c23bcbfaee8
+  checksum: bcf49eaf475dc4ce8d4e98f896408a9f6507a2cb7d24a207c012cb318b969e04a02bcde2ff2920eadd5055ccae444a007b769e418147a56268fab2cda8694cde
   languageName: node
   linkType: hard
 
@@ -5074,12 +5074,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^7.4.1":
-  version: 7.4.2
-  resolution: "minimatch@npm:7.4.2"
+"minimatch@npm:^8.0.2":
+  version: 8.0.2
+  resolution: "minimatch@npm:8.0.2"
   dependencies:
     brace-expansion: ^2.0.1
-  checksum: 9e341b04e69d5ab03e4206dcb61c8a158e3b8709628bf5e1a4eaa9f3b72c0ba925e24ad959b1f6ce6835caa5a927131d5087fae6836b69e7d99d7d5e63ef0bd8
+  checksum: ceb50867205c716a1d027e6de3bd5976a940cec266acf05ff41c29bff9967290a867b381f6317fcebddfb056f0eedff88484d121e4449c3bb16c552a51b7a745
   languageName: node
   linkType: hard
 
