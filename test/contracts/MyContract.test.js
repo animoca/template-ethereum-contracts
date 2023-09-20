@@ -13,7 +13,7 @@ const config = {
   },
 };
 
-runBehaviorTests('AccessControl', config, function (deployFn) {
+runBehaviorTests('MyContract', config, function (deployFn) {
   let deployer, other;
 
   before(async function () {
