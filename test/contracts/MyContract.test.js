@@ -31,7 +31,7 @@ runBehaviorTests('MyContract', config, function (deployFn) {
   describe('constructor(address,address)', function () {
     it('reverts if the data is zero', async function () {
       const artifact = await ethers.getContractFactory('MyContractMock');
-      expect(deployFn({data: ethers.constants.AddressZero})).to.be.revertedWithCustomError(artifact, 'InvalidZeroData');
+      expect(deployFn({data: ethers.ZeroAddress})).to.be.revertedWithCustomError(artifact, 'InvalidZeroData');
     });
 
     context('when successful', function () {
@@ -47,7 +47,7 @@ runBehaviorTests('MyContract', config, function (deployFn) {
 
   describe('setData(address)', function () {
     it('reverts if the data is zero', async function () {
-      expect(this.contract.setData(ethers.constants.AddressZero)).to.be.revertedWithCustomError(this.contract, 'InvalidZeroData');
+      expect(this.contract.setData(ethers.ZeroAddress)).to.be.revertedWithCustomError(this.contract, 'InvalidZeroData');
     });
 
     it('reverts if not called by the contract owner', async function () {
