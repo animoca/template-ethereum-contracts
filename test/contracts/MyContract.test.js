@@ -40,7 +40,7 @@ runBehaviorTests('MyContract', config, function (deployFn) {
       });
 
       it('emits a DataSet event', async function () {
-        await expect(this.contract.deployTransaction.hash).to.emit(this.contract, 'DataSet').withArgs(deployer.address);
+        await expect(this.contract.deploymentTransaction().hash).to.emit(this.contract, 'DataSet').withArgs(deployer.address);
       });
     });
   });
