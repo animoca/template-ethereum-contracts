@@ -3,9 +3,10 @@ module.exports = {
   env: {
     node: true,
     mocha: true,
+    es2020: true,
   },
   parserOptions: {
-    ecmaVersion: 9,
+    ecmaVersion: 2020,
   },
   rules: {
     'prettier/prettier': 'error',
